@@ -1,20 +1,20 @@
 [ SET UP - React/Redux ]
-    [  ] npm install
-    [  ] npm install redux 
-    [  ] npm install react-redux
-    [  ] npm install redux-logger
-    [  ] npm install react-router-dom
+    [ x ] npm install
+    [ x ] npm install redux 
+    [ x ] npm install react-redux
+    [ x ] npm install redux-logger
+    [ x ] npm install react-router-dom
     [  ] Make Components
     [  ] Material UI ?
-        [  ] npm install @material-ui/core
-        [  ] npm install @material-ui/icons
-        [   ] npm install @fontsource/roboto
-            [  ] import '@fontsource/roboto';
-    [  ] Bootstrap ?
-        [  ] npm install react-bootstrap bootstrap@4.6.0
-    [ ] IN DATABASE
-        [  ] Make database and table, ect from data.sql
-        [  ] Make sure to input at least one data point so you can test your GET route
+        [ x ] npm install @material-ui/core
+        [ x ] npm install @material-ui/icons
+        [ x ] npm install @fontsource/roboto
+            [ x ] import '@fontsource/roboto';
+    [ N/A ] Bootstrap ?
+        [ N/A ] npm install react-bootstrap bootstrap@4.6.0
+    [ x ] IN DATABASE
+        [ x ] Make database and table, ect from data.sql
+        [ x ] Make sure to input at least one data point so you can test your GET route
     [ ] IN APP
         [  ] Import {Route, HashRouter as Router} from 'react-router-dom'
         [  ] Wrap the app in a <Router>
