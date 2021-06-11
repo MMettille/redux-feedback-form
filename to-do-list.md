@@ -16,8 +16,8 @@
         [ x ] Make database and table, ect from data.sql
         [ x ] Make sure to input at least one data point so you can test your GET route
     [ ] IN APP
-        [  ] Import {Route, HashRouter as Router} from 'react-router-dom'
-        [  ] Wrap the app in a <Router>
+        [ x ] import {Route, HashRouter as Router} from 'react-router-dom';
+        [ x ] Wrap the app in a <Router>
         [ ] Admin or Client?
             [ ] Client
                 [ ] Make Routes through the different pages
@@ -109,6 +109,11 @@
         <Header />
         
         <Route path="/" exact>
+            // -> How are you feeling today?
+            <Home />
+        </Route>
+
+        <Route path="/QuestionOne" >
             // -> How are you feeling today?
             <QuestionOne />
         </Route>
