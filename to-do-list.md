@@ -5,7 +5,7 @@
     [ x ] npm install redux-logger
     [ x ] npm install react-router-dom
     [  ] Make Components
-    [  ] Material UI ?
+    [ x ] Material UI ?
         [ x ] npm install @material-ui/core
         [ x ] npm install @material-ui/icons
         [ x ] npm install @fontsource/roboto
@@ -24,18 +24,18 @@
             [ ] Admin
                 [ ] Make Routes through the different pages
     [ ] IN INDEX.JS 
-        [  ] import {createStore, combineReducers, applyMiddleware} from 'redux';
-        [  ] import {Provider} from 'react-redux';
-        [  ] import logger from 'redux-logger';
-        [  ] Create Store
-            [  ] Wrap with combineReducers
+        [ x ] import {createStore, combineReducers, applyMiddleware} from 'redux';
+        [ x ] import {Provider} from 'react-redux';
+        [ x ] import logger from 'redux-logger';
+        [ x ] Create Store
+            [ x ] Wrap with combineReducers
                 [ ] Pass in reducers
-            [  ] applyMiddleware
-                [  ] logger
-        [  ] React.DOM.render
-            [  ] React.StrictMode?
-            [  ] Wrap the app in a <Provider> and give the provider a store -> <Provider store={store}>
-            [ ] Service Worker?
+            [ x ] applyMiddleware
+                [ x ] logger
+        [ x ] React.DOM.render
+            [ x ] React.StrictMode?
+            [ x ] Wrap the app in a <Provider> and give the provider a store -> <Provider store={store}>
+            [ x ] Service Worker?
     [ ] SERVER.JS
         [ ] Will need to make an express route to './routes/feedback.router.js
     [ ] FEEDBACK.ROUTER.JS
