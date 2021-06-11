@@ -36,12 +36,12 @@
             [ x ] React.StrictMode?
             [ x ] Wrap the app in a <Provider> and give the provider a store -> <Provider store={store}>
             [ x ] Service Worker?
-    [ ] SERVER.JS
-        [ ] Will need to make an express route to './routes/feedback.router.js
+    [ x ] SERVER.JS
+        [ x ] Will need to make an express route to './routes/feedback.router.js
     [ ] FEEDBACK.ROUTER.JS
-        [ ] const import express = require('express)
-        [ ] const router = express.Router();
-        [ ] const pool = require('../modules/pool');
+        [ x ] const import express = require('express)
+        [ x ] const router = express.Router();
+        [ x ] const pool = require('../modules/pool');
         [ ] Post request to database
 
 [ Header ] 
