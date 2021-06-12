@@ -18,9 +18,9 @@ function QuestionTwo(props){
             window.location.reload()
         } else {
         event.preventDefault();
-        dispatch({type: 'ADD_UNDERSTANDING', payload: 
-            value
-        })
+        dispatch({type: 'ADD_UNDERSTANDING', payload: {
+            understanding: value
+        }})
         setValue(0)
         history.push('/questions/QuestionThree')
         }

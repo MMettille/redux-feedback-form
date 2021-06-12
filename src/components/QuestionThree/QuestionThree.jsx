@@ -17,9 +17,9 @@ function QuestionThree(props){
             window.location.reload()
         } else {
         event.preventDefault();
-        dispatch({type: 'ADD_SUPPORTED', payload: 
-            value
-        })
+        dispatch({type: 'ADD_SUPPORTED', payload: {
+            support: value
+        }})
         setValue('')
         history.push('/questions/QuestionFour')
         }

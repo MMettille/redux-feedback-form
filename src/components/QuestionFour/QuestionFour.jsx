@@ -13,9 +13,9 @@ function QuestionFour(){
     const handleChange = (event) => {
         event.preventDefault();
         console.log
-        dispatch({type: 'ADD_COMMENTS', payload: 
-            comments
-        })
+        dispatch({type: 'ADD_COMMENTS', payload: {
+            comments: comments
+        }})
         setComments('')
         history.push('/SubmitFeedback')
       };

@@ -20,9 +20,9 @@ function QuestionOne(props){
         } else {
             event.preventDefault();
             console.log(value)
-            dispatch({type: 'ADD_FEELING', payload:
-            value
-            })
+            dispatch({type: 'ADD_FEELING', payload: {
+            feeling: value
+            }})
             setValue(0)
             history.push('/questions/QuestionTwo')
         }
