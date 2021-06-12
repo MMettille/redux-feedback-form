@@ -13,18 +13,22 @@ function QuestionThree(props){
     const history = useHistory('');
 
     const handleChange = (event) => {
+        if (value === 0){
+            window.location.reload()
+        } else {
         event.preventDefault();
         dispatch({type: 'ADD_SUPPORTED', payload: 
             value
         })
         setValue('')
         history.push('/questions/QuestionFour')
-      };
+        }
+    };
 
     return(
         <div className="Question-container">
             <Box  component="fieldset" mb={3} borderColor="transparent">
-                <Typography component="legend">How are you feeling?</Typography>
+                <Typography component="legend">How well are you being supported?</Typography>
                 <Rating
                     value={value}
                     name="feeling-rating"

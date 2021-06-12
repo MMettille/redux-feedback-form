@@ -16,13 +16,18 @@ function QuestionOne(props){
     const [value, setValue] = useState(0);
 
     const handleChange = (event) => {
-        event.preventDefault();
-        dispatch({type: 'ADD_FEELING', payload:
+        if (value === 0){
+            window.location.reload()
+        } else {
+            event.preventDefault();
+            console.log(value)
+            dispatch({type: 'ADD_FEELING', payload:
             value
-        })
-        setValue(0)
-        history.push('/questions/QuestionTwo')
-      };
+            })
+            setValue(0)
+            history.push('/questions/QuestionTwo')
+        }
+    };
 
     return(
         <div className="Question-container">

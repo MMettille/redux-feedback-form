@@ -14,13 +14,17 @@ function QuestionTwo(props){
     const history = useHistory('');
 
     const handleChange = (event) => {
+        if (value === 0){
+            window.location.reload()
+        } else {
         event.preventDefault();
         dispatch({type: 'ADD_UNDERSTANDING', payload: 
             value
         })
         setValue(0)
         history.push('/questions/QuestionThree')
-      };
+        }
+    };
 
     return(
         <div className="Question-container">
