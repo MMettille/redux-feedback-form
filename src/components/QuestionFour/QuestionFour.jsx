@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {useHistory} from 'react-router-dom';
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button';
 
 function QuestionFour(){
     const [comments, setComments] = useState('') 
@@ -19,13 +21,18 @@ function QuestionFour(){
        
 
     return(
-        <div className="Question-container">
+        <div className="question-container">
             <h3>Would you like to leave any comments?</h3>
-            <form onSubmit={handleChange}>
-                <input type="text" 
-                onChange={(evt) => setComments(evt.target.value)}
+            <form onSubmit={handleChange} noValidate autoComplete="off">
+                <TextField
+                    label="Enter Comments Here"
+                    multiline
+                    variant="outlined"
+                    onChange={(evt) => setComments(evt.target.value)}
                 />
-                <button>Submit</button>
+                <div className="btn">
+                <Button variant="outlined">Default</Button>
+                </div>
             </form>
         </div>
     )

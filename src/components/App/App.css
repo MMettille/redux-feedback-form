@@ -2,4 +2,12 @@
   text-align: center;
 }
 
+.btn{
+  margin: 5px;
+}
 
+.question-container {
+  width: 25%;
+  margin: auto;
+  padding: 30px;
+}

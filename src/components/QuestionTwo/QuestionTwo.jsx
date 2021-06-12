@@ -5,6 +5,7 @@ import {useHistory} from 'react-router-dom';
 import Rating from '@material-ui/lab/Rating';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
 
 function QuestionTwo(props){
 
@@ -27,11 +28,12 @@ function QuestionTwo(props){
     };
 
     return(
-        <div className="Question-container">
+        <div className="question-container">
             <Box component="fieldset" mb={3} borderColor="transparent">
-                <Typography component="legend">How well do you understand the material?</Typography>
+                <h3>How well do you understand the material?</h3>
                 <Rating
                     value={value}
+                    size="large"
                     name="understanding-rating"
                     onChange={(event, newValue) => {
                         setValue(newValue);
@@ -39,7 +41,9 @@ function QuestionTwo(props){
                     onClick={props.handleInputChange}
                 />
             </Box>
-            <button onClick={handleChange}>Submit</button>
+            <div className="btn">
+            <Button variant="outlined" size="large" color="primary" onClick={handleChange}>Submit</Button>
+            </div>
         </div>
     )
 }
