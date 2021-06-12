@@ -15,47 +15,47 @@ function SubmitFeedback(){
     // const comments = useSelector(store => store.comments);
 
     const handleClick = (event) => {
-        console.log(userRating)
-        // event.preventDefault()
-        // axios({
-        //     method: 'POST',
-        //     url: '/feedback',
-        //     data: {
-        //         feeling: feeling,
-        //         understanding: understanding,
-        //         support: support,
-        //         comments: comments
-        //     }
-        // })
-        //     .then(response => {
-        //         history.push('/');
-        //         console.log('response', response)
-        //         clearRedux();
-        //     })
-        //     .catch(error => {
-        //         console.log('error in post', error);
-        //     })
+        console.log(userRating[0])
+        console.log(userRating[1])
+        console.log(userRating[2])
+        console.log(userRating[3])
+        event.preventDefault()
+        axios({
+            method: 'POST',
+            url: '/feedback',
+            data: {
+                feeling: userRating[0],
+                understanding: userRating[1],
+                support: userRating[2],
+                comments: userRating[3]
+            }
+        })
+            .then(response => {
+                history.push('/');
+                console.log('response', response)
+                clearRedux();
+            })
+            .catch(error => {
+                console.log('error in post', error);
+            })
     }
 
-    // const clearRedux = () => {
-    //     dispatch({
-    //         type: 'REMOVE_FEELING',
-    //         type: 'REMOVE_UNDERSTANDING',
-    //         type: 'REMOVE_SUPPORT',
-    //         type: 'REMOVE_COMMENTS',
-    //     });
-    // }
+    const clearRedux = () => {
+        dispatch({
+            type: 'CLEAR_REDUX'
+        });
+    }
 
     return (
         <>
 
-        {/* <h2>Your Feedback</h2>
-        <p>{feeling}</p>
-        {/* <p>{understanding}</p> */}
-        {/* <p>{support}</p>
-        <p>{comments}</p>
+        <h2>Your Feedback</h2>
+        <p>{userRating[0]}</p>
+        <p>{userRating[1]}</p>
+        <p>{userRating[2]}</p>
+        <p>{userRating[3]}</p>
         <Button variant="outlined" size="large" color="primary" onClick={handleClick}>Submit</Button>
-         */}
+        
         </>
     )
 
