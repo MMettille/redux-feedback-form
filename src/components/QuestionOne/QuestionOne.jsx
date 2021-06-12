@@ -19,9 +19,8 @@ function QuestionOne(props){
             window.location.reload()
         } else {
             event.preventDefault();
-            console.log(value)
             dispatch({type: 'ADD_FEELING', payload: 
-            value
+                value
             })
             setValue(0)
             history.push('/questions/QuestionTwo')

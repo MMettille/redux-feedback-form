@@ -15,3 +15,18 @@
 h3{
   text-align: center;
 }
+/* The width is 100%, when the viewport is 1100px or smaller - for smartphone users */
+@media screen and (max-width: 700px) {
+  .question-container {
+    width: 50%;
+    margin: auto;
+  }
+}
+
+/* The width is 100%, when the viewport is 1100px or smaller - for iPad users */
+@media screen and (max-width: 1100px) {
+  .question-container {
+    width: 75%;
+    margin: auto;
+  }
+}

@@ -7,9 +7,7 @@ img{
     max-height: 100%;
 }
 
-
-
-/* The width is 100%, when the viewport is 800px or smaller */
+/* The width is 100%, when the viewport is 500px or smaller */
 @media screen and (max-width: 500px) {
     img{
         border-radius: 30px;

@@ -10,15 +10,8 @@ function SubmitFeedback(){
 
     // reducers
     const userRating = useSelector(store => store.userRating);
-    // const understanding = useSelector(store => store.understandingRating);
-    // const support = useSelector(store => store.supportedRating);
-    // const comments = useSelector(store => store.comments);
 
     const handleClick = (event) => {
-        console.log(userRating[0])
-        console.log(userRating[1])
-        console.log(userRating[2])
-        console.log(userRating[3])
         event.preventDefault()
         axios({
             method: 'POST',
