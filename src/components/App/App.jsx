@@ -62,7 +62,7 @@ function App() {
             <QuestionFour />
         </Route>
             
-        <Route path='/questions/SubmitFeedback'>
+        <Route path='/SubmitFeedback'>
           <SubmitFeedback />
         </Route>
         

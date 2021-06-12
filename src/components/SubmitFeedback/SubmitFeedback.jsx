@@ -9,11 +9,19 @@ function SubmitFeedback(){
 
     // reducers
     const feeling = useSelector(store => store.feelingRating);
-    console.log(feeling)
+    const understanding = useSelector(store => store.understandingRating);
+    const support = useSelector(store => store.supportedRating);
+    const comments = useSelector(store => store.comments);
+
     return(
         <>
-            <button>clickme</button>
-        </>
+        <h2>Your Feedback</h2>
+        <p>{feeling.feeling}</p>
+        <p>{understanding.understanding}</p>
+        <p>{support.support}</p>
+        <p>{comments.comments}</p>
+        
+    </>
     )
 }
 
