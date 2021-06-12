@@ -1,10 +1,11 @@
 import React from 'react';
-import axios from 'axios';
 import '@fontsource/roboto';
 import {Route, HashRouter as Router} from 'react-router-dom';
 import './App.css';
 
 import { createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
 import Admin from '../Admin/Admin';
 import Header from '../Header/Header';
@@ -37,42 +38,53 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-    <Router>
-      <div className='App'>
-           
-        <Header />
+      <Grid container >
+        <Router>
+          
+            <Grid item xs={12}>
+              <Header />
+            </Grid>
+            <Grid item xs={12}>
+              <Route path="/" exact>
+                <Home />
+              </Route>
+            </Grid>
+            <Grid item xs={12}>
+              <Route path="/questions/QuestionOne" >
+                <QuestionOne />
+              </Route>
+            </Grid>
+            <Grid item xs={12}>
+              <Route path="/questions/QuestionTwo">
+                <QuestionTwo />
+              </Route>
+            </Grid>
+            <Grid item xs={12}>
+              <Route path="/questions/QuestionThree">
+                <QuestionThree />
+              </Route>
+            </Grid>
+            <Grid item xs={12}>
+              <Route path="/questions/QuestionFour">
+                <QuestionFour />
+              </Route>
+            </Grid>
+            <Grid item xs={12}>
+              <Route path='/SubmitFeedback'>
+                <SubmitFeedback />
+              </Route>
+            </Grid>
+            <Grid item xs={12}>
+              <Route path='/admin'>
+                <Admin />
+              </Route>
+            </Grid>
+          <Grid item xs={12}>
+            <Footer />
+          </Grid>
         
-        <Route path="/" exact>
-            <Home />
-        </Route>
-
-        <Route path="/questions/QuestionOne" >
-            <QuestionOne />
-        </Route>
-
-        <Route path="/questions/QuestionTwo">
-            <QuestionTwo />
-        </Route>
-
-        <Route path="/questions/QuestionThree">
-            <QuestionThree />
-        </Route>
-
-        <Route path="/questions/QuestionFour">
-            <QuestionFour />
-        </Route>
-            
-        <Route path='/SubmitFeedback'>
-          <SubmitFeedback />
-        </Route>
-        
-        <Route path='/admin'>
-          <Admin />
-        </Route>
-
-        <Footer />
-      </div>
-    </Router>
+      </Router>
+    </Grid>
     </ThemeProvider>
   );
 }
