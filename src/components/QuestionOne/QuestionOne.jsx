@@ -13,9 +13,9 @@ function QuestionOne(){
 
     const handleChange = (event) => {
         event.preventDefault();
-        dispatch({type: 'ADD_FEELING', payload: {
-            feeling: feelingRating
-        }})
+        dispatch({type: 'ADD_FEELING', payload:
+            feelingRating
+        })
         setFeelingRating('')
         history.push('/questions/QuestionTwo')
       };

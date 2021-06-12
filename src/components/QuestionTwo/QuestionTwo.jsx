@@ -11,9 +11,9 @@ function QuestionTwo(){
 
     const handleChange = (event) => {
         event.preventDefault();
-        dispatch({type: 'ADD_UNDERSTANDING', payload: {
-            understanding: understandingRating
-        }})
+        dispatch({type: 'ADD_UNDERSTANDING', payload: 
+            understandingRating
+        })
         setUnderstandingRating('')
         history.push('/questions/QuestionThree')
       };

@@ -10,9 +10,9 @@ function QuestionThree(){
 
     const handleChange = (event) => {
         event.preventDefault();
-        dispatch({type: 'ADD_SUPPORTED', payload: {
-            support: supportedRating
-        }})
+        dispatch({type: 'ADD_SUPPORTED', payload: 
+            supportedRating
+        })
         setSupportedRating('')
         history.push('/questions/QuestionFour')
       };
