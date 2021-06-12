@@ -45,17 +45,17 @@
         [ ] Post request to database
 
 [ Header ] 
-    [  ] Make it pretty!
+    [ x ] Make it pretty!
 [ Home ]
-    [  ] Motivational quote on doing great things
-    [ ] Next Button
-        [ ] Will navigate you to step #1 [/QuestionOne]
+    [ x ] Motivational quote on doing great things
+    [ x ] Next Button
+        [ x ] Will navigate you to step #1 [/QuestionOne]
 [ /QuestionOne ]
-    [ ] Rating 1-5 on how the user is feeling (required)
+    [  ] Rating 1-5 on how the user is feeling (required)
     [ ] Next Button
-        [ ] Will save the response in REDUX
-        [ ] Will clear the input
-        [ ] Will navigate you to step #2 [/QuestionTwo]
+        [ x ] Will save the response in REDUX
+        [ x ] Will clear the input
+        [ x ] Will navigate you to step #2 [/QuestionTwo]
     [ ] STRETCH!!! Can edit feedback
     [ ] STRETCH!!! Can go back to the previous page
 [ /QuestionTwo ]
@@ -67,7 +67,7 @@
     [ ] STRETCH!!! Can edit feedback
     [ ] STRETCH!!! Can go back to the previous page
 [ /QuestionThree ]
-    [ ] Rating 1-5 on how the user is feeling (required)
+    [ ] Rating 1-5 on how the user is being supported (required)
     [ ] Next Button
         [ ] Will save the response in REDUX
         [ ] Will clear the input
