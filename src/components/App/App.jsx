@@ -14,6 +14,7 @@ import QuestionTwo from '../QuestionTwo/QuestionTwo';
 import QuestionThree from '../QuestionThree/QuestionThree';
 import QuestionFour from '../QuestionFour/QuestionFour';
 import SubmitFeedback from '../SubmitFeedback/SubmitFeedback';
+import Footer from '../Footer/Footer';
 
 const theme = createMuiTheme({
   palette: {
@@ -69,6 +70,7 @@ function App() {
           <Admin />
         </Route>
 
+        <Footer />
       </div>
     </Router>
     </ThemeProvider>
