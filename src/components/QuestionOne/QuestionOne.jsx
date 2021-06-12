@@ -17,7 +17,6 @@ function QuestionOne(props){
 
     const handleChange = (event) => {
         event.preventDefault();
-        console.log(value)
         dispatch({type: 'ADD_FEELING', payload:
             value
         })
@@ -25,52 +24,20 @@ function QuestionOne(props){
         history.push('/questions/QuestionTwo')
       };
 
-      
-    // const [value, setValue] = React.useState(0);
-
     return(
         <div className="Question-container">
             <Box  component="fieldset" mb={3} borderColor="transparent">
-            <Rating
-            value={value}
-            name="feeling-rating"
-            onChange={(event, newValue) => {
-                setValue(newValue);
-            }}
-            onClick={props.handleInputChange}
-            />
-      </Box>
-
-
-            {/* <input
-                name="rating"
-                type="number"
-                value={Rating}
-                ref={register}
-                hidden
-                readOnly
-            />
-            <Box component="fieldset" borderColor="transparent">
-                <Typography component="legend">How Are You Feeling Today?</Typography>
-                    <Rating
-                        name="rating"
-                        value={Rating}
-                        precision={1}
-                        onChange={(_, value) => {
-                            setRating(value);
-                          }}
-                        onClick={handleChange}
-                    />
-            
-        
-      </Box>
-            {/* <form onSubmit={handleChange}>
-                <input type="number" 
-                onChange={(evt) => setFeelingRating(evt.target.value)}
-                /> */}
-                <button onClick={handleChange}>Submit</button>
-            {/* </form> */}
-            
+                <Typography component="legend">How are you feeling?</Typography>
+                <Rating
+                    value={value}
+                    name="feeling-rating"
+                    onChange={(event, newValue) => {
+                        setValue(newValue);
+                    }}
+                    onClick={props.handleInputChange}
+                />
+            </Box>
+            <button onClick={handleChange}>Submit</button>
         </div>
     )
 }

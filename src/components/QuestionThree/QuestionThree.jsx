@@ -2,8 +2,12 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {useHistory} from 'react-router-dom';
 
-function QuestionThree(){
-    const [supportedRating, setSupportedRating] = useState('') 
+import Rating from '@material-ui/lab/Rating';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+
+function QuestionThree(props){
+    const [value, setValue] = useState(0);
     
     const dispatch = useDispatch();
     const history = useHistory('');
@@ -11,21 +15,26 @@ function QuestionThree(){
     const handleChange = (event) => {
         event.preventDefault();
         dispatch({type: 'ADD_SUPPORTED', payload: 
-            supportedRating
+            value
         })
-        setSupportedRating('')
+        setValue('')
         history.push('/questions/QuestionFour')
       };
 
     return(
         <div className="Question-container">
-            <h3>How well do you feel you are being supported?</h3>
-            <form onSubmit={handleChange}>
-                <input type="number" 
-                onChange={(evt) => setSupportedRating(evt.target.value)}
+            <Box  component="fieldset" mb={3} borderColor="transparent">
+                <Typography component="legend">How are you feeling?</Typography>
+                <Rating
+                    value={value}
+                    name="feeling-rating"
+                    onChange={(event, newValue) => {
+                        setValue(newValue);
+                    }}
+                    onClick={props.handleInputChange}
                 />
-                <button>Submit</button>
-            </form>
+            </Box>
+            <button onClick={handleChange}>Submit</button>
         </div>
     )
 }

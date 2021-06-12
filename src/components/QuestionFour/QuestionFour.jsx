@@ -10,9 +10,9 @@ function QuestionFour(){
 
     const handleChange = (event) => {
         event.preventDefault();
-        dispatch({type: 'ADD_COMMENTS', payload: 
-            comments
-        })
+        dispatch({type: 'ADD_COMMENTS', payload: {
+            comments: comments
+        }})
         setComments('')
         history.push('/SubmitFeedback')
       };
