@@ -20,7 +20,7 @@ function QuestionTwo(){
 
     return(
         <div className="Question-container">
-            <h3>How are you feeling today?</h3>
+            <h3>How well do you understand the material?</h3>
             <form onSubmit={handleChange}>
                 <input type="number" 
                 onChange={(evt) => setUnderstandingRating(evt.target.value)}

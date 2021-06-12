@@ -13,7 +13,7 @@ function QuestionThree(){
         dispatch({type: 'ADD_SUPPORTED', payload: {
             support: supportedRating
         }})
-        supportedRating('')
+        setSupportedRating('')
         history.push('/questions/QuestionFour')
       };
 
