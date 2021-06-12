@@ -12,6 +12,7 @@ function QuestionFour(){
 
     const handleChange = (event) => {
         event.preventDefault();
+        console.log
         dispatch({type: 'ADD_COMMENTS', payload: 
             comments
         })
@@ -31,7 +32,7 @@ function QuestionFour(){
                     onChange={(evt) => setComments(evt.target.value)}
                 />
                 <div className="btn">
-                <Button variant="outlined">Default</Button>
+                <Button type="submit" variant="outlined" size="large" color="primary">Submit</Button>
                 </div>
             </form>
         </div>

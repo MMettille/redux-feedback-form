@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import Button from '@material-ui/core/Button';
 
 function SubmitFeedback(){
 
@@ -52,7 +53,7 @@ function SubmitFeedback(){
         <p>{understanding}</p>
         <p>{support}</p>
         <p>{comments}</p>
-        <button onClick={handleClick}>Submit</button>
+        <Button variant="outlined" size="large" color="primary" onClick={handleClick}>Submit</Button>
         
         </>
     )
