@@ -37,7 +37,7 @@ router.post('/',  (req, res) => {
   
   //* PUT REQUEST
   // ⬇ Edits flagged status in the database
-  router.put("/flagged/:id", (req, res) => {
+  router.put("/:id", (req, res) => {
     // ⬇ Checking the status of flagged
     console.log('req.params.id', req.params.id)
     // ⬇ Making the user's flag into a variable

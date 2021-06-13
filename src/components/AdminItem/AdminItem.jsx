@@ -19,11 +19,8 @@ function AdminItem({feedback, getFeedback}) {
             flagged: !flagged
         };
         // ⬇ Axios put request
-        console.log(feedback.id);
-        
-        axios.put(`/feedback/flagged/{feedback.id}`, data)
+        axios.put(`/feedback/${feedback.id}`, data)
         .then( response => {
-            console.log(response);
             getFeedback()
         }).catch( error => {
             console.log(`Error in put`, error)
