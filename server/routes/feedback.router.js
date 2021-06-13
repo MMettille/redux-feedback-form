@@ -6,12 +6,13 @@ const pool = require('../modules/pool');
 // Will get all the responses
 router.get('/', (req, res) => {
   pool.query('SELECT * from "feedback";').then((result) => {
+    // ⬇ Sends back the results in an object
       res.send(result.rows);
-  }).catch((error) => {
-      console.log('Error GET', error)
+  }).catch( error => {
+      console.log('Error GET', error);
       res.sendStatus(500);
   });
-})
+});
 
 
 //* POST REQUEST
