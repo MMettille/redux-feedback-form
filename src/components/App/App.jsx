@@ -7,6 +7,7 @@ import { createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
 import Admin from '../Admin/Admin';
+import AdminUnderstandingGraph from '../AdminUnderstandingGraph/AdminUnderstandingGraph'
 import Header from '../Header/Header';
 import Home from '../Home/Home';
 import QuestionOne from '../QuestionOne/QuestionOne';
@@ -75,6 +76,11 @@ function App() {
             </Grid>
             <Grid item xs={12}>
               <Route path='/admin'>
+                <Admin />
+              </Route>
+            </Grid>
+            <Grid item xs={12}>
+              <Route path='/admin/understanding-graph'>
                 <Admin />
               </Route>
             </Grid>

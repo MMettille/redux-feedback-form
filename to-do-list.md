@@ -98,8 +98,8 @@
     [ ] STRETCH!!! Can edit feedback
     [ ] STRETCH!!! Can go back to the previous page
 [ Admin Page ]
-    [ ] Get request from the database
-    [ ] Display everything in a table
+    [ x ] Get request from the database
+    [ x ] Display everything in a table
     [ ] WILL have a delete function
 
 
