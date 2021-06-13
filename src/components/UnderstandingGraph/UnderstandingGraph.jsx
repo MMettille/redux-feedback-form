@@ -30,8 +30,8 @@ function UnderstandingGraph(props) {
     console.log('feedback', feedback)
     
     // ⬇ Arrays of the data I will need:
-    const date = []
-    const understanding = []
+    // const date = []
+    // const understanding = []
     const dataArray = []
     // ⬇ Loops through feedback 
     for (let i=0; i < feedback.length; i++){
@@ -39,9 +39,21 @@ function UnderstandingGraph(props) {
         console.log(feedback[i])
         console.log(feedback[i].date) // Will log the long long date
         console.log(feedback[i].understanding) // Will log the number
-        date.push(feedback[i].date);
-        understanding.push(feedback[i].understanding);
+        // date.push(feedback[i].date);
+        // understanding.push(feedback[i].understanding);
         // console.log(`date`, date)
+
+        let date = new Date('feedback[i].date');
+        let formatOptions = {
+            month: '2-digit',
+            day: '2-digit',
+            year: 'numeric',
+            hour:   '2-digit', 
+       minute: '2-digit',
+       hour12: true 
+        }
+        let dateString = date.toLocaleDateString('en-US', formatOptions);
+        console.log(dateString)
         let data = {
             "date": feedback[i].date,
             "understanding": feedback[i].understanding
@@ -49,7 +61,7 @@ function UnderstandingGraph(props) {
         dataArray.push(data)
     }
 
-    console.log('Data Array: ', dataArray)
+   
 
 
 
@@ -63,7 +75,7 @@ function UnderstandingGraph(props) {
     let x = am4core.create("chartdiv", am4charts.XYChart);
     // ⬇ Padding to the right of the graph
     x.paddingRight =  20;
-
+    x.dateFormatter.dateFormat = "yyyy-MM-dd";
     // ⬇ Adding data
 
     let data = dataArray;
