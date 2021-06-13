@@ -35,4 +35,23 @@ router.post('/',  (req, res) => {
       });
   });
   
+  //* PUT REQUEST
+  // ⬇ Edits flagged status in the database
+  router.put('/:id', (req, res) => {
+    // ⬇ Checking the status of flagged
+    console.log(req.params.id)
+    // ⬇ Making the user's flag into a variable
+    const flagged = req.body.flagged
+    // ⬇ Checking the status of flagged
+    console.log(req.body.flagged)
+    let queryText = 'UPDATE "feedback" SET "FLAGGED"=$1 WHERE "id"=$2;'
+    // ⬇ Sanitizing Data
+    pool.query(queryText, [flagged, req.params.id])
+    .then( result => {
+      res.sendStatus(200)
+    }).catch(error => {
+      console.log(`Error editing feedback`, error);
+      res.sendStatus(500);
+    });
+  })
   module.exports = router;
