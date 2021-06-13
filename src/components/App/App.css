@@ -15,6 +15,7 @@
 h3{
   text-align: center;
 }
+
 /* The width is 100%, when the viewport is 700px or smaller - for smartphone users */
 @media screen and (max-width: 700px) {
   .question-container {

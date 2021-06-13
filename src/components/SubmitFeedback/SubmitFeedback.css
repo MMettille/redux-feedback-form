@@ -1,0 +1,10 @@
+.table-container{
+    width: 25%;
+    margin: auto;
+    padding: 20px;
+    background-color: #509556;
+  }
+
+  .submitFeedbackBtn {
+      margin-top: 10px;
+  }

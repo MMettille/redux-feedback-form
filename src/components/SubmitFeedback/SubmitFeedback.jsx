@@ -4,6 +4,16 @@ import axios from 'axios';
 import Button from '@material-ui/core/Button';
 import swal from 'sweetalert';
 
+import './SubmitFeedback.css'
+
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import Paper from "@material-ui/core/Paper";
+
 function SubmitFeedback(){
 
     const history = useHistory();
@@ -57,13 +67,34 @@ function SubmitFeedback(){
 
     return (
         <>
-
-        <h2>Your Feedback</h2>
-        <p>{userRating[0]}</p>
-        <p>{userRating[1]}</p>
-        <p>{userRating[2]}</p>
-        <p>{userRating[3]}</p>
-        <Button variant="outlined" size="large" color="primary" onClick={handleClick}>Submit</Button>
+        <h3>Your Feedback:</h3>
+        <div className="table-container">
+            <TableContainer component={Paper}>
+                <Table aria-label="simple table">
+                    <TableBody>
+                        <TableRow>
+                            <TableCell variant="head">Feeling</TableCell>
+                            <TableCell>{userRating[0]}</TableCell>
+                        </TableRow>
+                        <TableRow>  
+                            <TableCell variant="head">Understanding</TableCell>
+                            <TableCell>{userRating[1]}</TableCell>
+                        </TableRow>
+                        <TableRow>  
+                            <TableCell variant="head">Support</TableCell>
+                            <TableCell>{userRating[2]}</TableCell>
+                        </TableRow>
+                        <TableRow>  
+                            <TableCell variant="head">Comments</TableCell>
+                            <TableCell>{userRating[3]}</TableCell>
+                        </TableRow>
+                    </TableBody>
+                </Table>
+            </TableContainer>
+        </div>
+        <div className="submitFeedbackBtn">
+            <Button variant="outlined" size="large" color="primary" onClick={handleClick}>Submit</Button>
+        </div>
         
         </>
     )
