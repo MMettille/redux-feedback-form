@@ -6,12 +6,13 @@ import axios from "axios";
 
 function UnderstandingGraph(props) {
     
-    const [feedback, setFeedback] = useState([]);
+    const [feedback, setFeedback] = useState('');
 
     useEffect(() => {
         getFeedback();
     })
-        
+    
+    // ⬇ This gets my data from the database and sets it to feedback
     const getFeedback = () => {
         axios.get("/feedback")
         .then( (response) => {
@@ -20,6 +21,20 @@ function UnderstandingGraph(props) {
         .catch((error) => {
             console.log(`We have a server error`, error);
         });
+    }
+
+    // ⬇ Arrays of the data I will need:
+    const date = []
+    const understanding = []
+
+    // ⬇ Loops through feedback 
+    for (let i=0; i < feedback.length; i++){
+        // ⬇ Checking that I can get the dates that I want:
+        // console.log(feedback.date)
+        //! That curseid infinite loop! I can't see what I am doing!
+        date.push(feedback[i].date);
+        understanding.push(feedback[i].understanding);
+        // console.log(`date`, date)
     }
 
 

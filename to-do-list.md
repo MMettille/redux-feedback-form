@@ -101,6 +101,12 @@
     [ x ] Get request from the database
     [ x ] Display everything in a table
     [ ] WILL have a delete function
+[ Graph ]
+    [ ] To get data from the database and into an array of objects:
+        [ ] will need an empty array for both the date and understanding score
+        [ ] Will need to loop through the database and push the into into the empty arrays
+        [ ] Will need to create an object for each item in the database and set it to the empty arrays
+
 
 
 
