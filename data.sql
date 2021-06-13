@@ -12,10 +12,10 @@ CREATE TABLE "feedback" (
   "flagged" boolean default false,
   "date" date not null default CURRENT_DATE
 ); 
+
 -- Sample Data
 INSERT INTO "feedback" ("feeling", "understanding", "support", "date")
 VALUES 
-(4, 4, 5, 'Doing Great!'),
 (4, 4, 5, '2021-06-11'),
 (4, 4, 5, '2021-06-10'),
 (4, 2, 5, '2021-06-9'),

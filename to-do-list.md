@@ -12,6 +12,9 @@
             [ x ] import '@fontsource/roboto';
     [ N/A ] Bootstrap ?
         [ N/A ] npm install react-bootstrap bootstrap@4.6.0
+    [ ] SweetAlert?
+        [ x ] npm install sweetalert --save
+        [ ] import swal from 'sweetalert';
     [ x ] IN DATABASE
         [ x ] Make database and table, ect from data.sql
         [ x ] Make sure to input at least one data point so you can test your GET route
@@ -23,7 +26,7 @@
                 [ ] Make Routes through the different pages
             [ ] Admin
                 [ ] Make Routes through the different pages
-    [ ] IN INDEX.JS 
+    [ x ] IN INDEX.JS 
         [ x ] import {createStore, combineReducers, applyMiddleware} from 'redux';
         [ x ] import {Provider} from 'react-redux';
         [ x ] import logger from 'redux-logger';
@@ -42,7 +45,7 @@
         [ x ] const import express = require('express)
         [ x ] const router = express.Router();
         [ x ] const pool = require('../modules/pool');
-        [ ] Post request to database
+        [ x ] Post request to database
 
 [ Header ] 
     [ x ] Make it pretty!
@@ -51,7 +54,7 @@
     [ x ] Next Button
         [ x ] Will navigate you to step #1 [/QuestionOne]
 [ /QuestionOne ]
-    [  ] Rating 1-5 on how the user is feeling (required)
+    [ x ] Rating 1-5 on how the user is feeling (required)
     [ ] Next Button
         [ x ] Will save the response in REDUX
         [ x ] Will clear the input
@@ -59,39 +62,39 @@
     [ ] STRETCH!!! Can edit feedback
     [ ] STRETCH!!! Can go back to the previous page
 [ /QuestionTwo ]
-    [ ] Rating 1-5 on how the user is feeling (required)
-    [ ] Next Button
-        [ ] Will save the response in REDUX
-        [ ] Will clear the input
-        [ ] Will navigate you to question #3 [/QuestionThree]
+    [ x ] Rating 1-5 on how the user is feeling (required)
+    [ x ] Next Button
+        [ x ] Will save the response in REDUX
+        [ x ] Will clear the input
+        [ x ] Will navigate you to question #3 [/QuestionThree]
     [ ] STRETCH!!! Can edit feedback
     [ ] STRETCH!!! Can go back to the previous page
 [ /QuestionThree ]
-    [ ] Rating 1-5 on how the user is being supported (required)
-    [ ] Next Button
-        [ ] Will save the response in REDUX
-        [ ] Will clear the input
-        [ ] Will navigate you to question #3 [/QuestionFour]
+    [ x ] Rating 1-5 on how the user is being supported (required)
+    [ x ] Next Button
+        [ x ] Will save the response in REDUX
+        [ x ] Will clear the input
+        [ x ] Will navigate you to question #3 [/QuestionFour]
     [ ] STRETCH!!! Can edit feedback
     [ ] STRETCH!!! Can go back to the previous page
 [ /QuestionFour ]
-    [ ] Input on any comments that they would like to write (Not required)
-    [ ] Next Button
-        [ ] Will save the response in REDUX
-        [ ] Will clear the input
-        [ ] Will navigate you to review/submit page [/SubmitFeedback]
+    [ x ] Input on any comments that they would like to write (Not required)
+    [ x ] Next Button
+        [ x ] Will save the response in REDUX
+        [ x ] Will clear the input
+        [ x ] Will navigate you to review/submit page [/SubmitFeedback]
     [ ] STRETCH!!! Can edit feedback
     [ ] STRETCH!!! Can go back to the previous page
 [ /SubmitFeedback ]
-    [ ] Will display each feedback response (in a table?)
-    [ ] Submit Button
-        [ ] Show confirmation
-        [ ] Post to database
-            [ ] What to name data:
-                [ ] ("feeling", "understanding", "support", "comments")
-        [ ] Clear the user's feedback from redux
-        [ ] Reset the table
-        [ ] Will navigate user back to home page
+    [ x ] Will display each feedback response (in a table?)
+    [ x ] Submit Button
+        [  ] Show confirmation
+        [ x ] Post to database
+            [ x ] What to name data:
+                [ x ] ("feeling", "understanding", "support", "comments")
+        [ x ] Clear the user's feedback from redux
+        [ x ] Reset the table
+        [ x ] Will navigate user back to home page
     [ ] STRETCH!!! Can edit feedback
     [ ] STRETCH!!! Can go back to the previous page
 [ Admin Page ]

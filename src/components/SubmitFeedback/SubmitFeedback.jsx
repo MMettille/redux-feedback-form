@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Button from '@material-ui/core/Button';
+import swal from 'sweetalert';
 
 function SubmitFeedback(){
 
@@ -13,24 +14,39 @@ function SubmitFeedback(){
 
     const handleClick = (event) => {
         event.preventDefault()
-        axios({
-            method: 'POST',
-            url: '/feedback',
-            data: {
-                feeling: userRating[0],
-                understanding: userRating[1],
-                support: userRating[2],
-                comments: userRating[3]
+        swal({
+            title: "Are You Sure",
+            text: "This will submit your response. There is no undoing this action.",
+            icon: "warning",
+            dangerMode: true,
+            buttons: ["Cancel", "Yes, I am sure."]
+        }).then ( (willSubmit)  => {
+            if( willSubmit ) {
+                axios({
+                    method: 'POST',
+                    url: '/feedback',
+                    data: {
+                        feeling: userRating[0],
+                        understanding: userRating[1],
+                        support: userRating[2],
+                        comments: userRating[3]
+                    }
+                })
+                    .then(response => {
+                        history.push('/');
+                        console.log('response', response)
+                        clearRedux();
+                    })
+                    .catch(error => {
+                        console.log('error in post', error);
+                    })
+                    swal("Your response has been submitted!",{
+                        icon: "success",
+                    })
+            } else {
+                swal("Your list is safe!");
             }
         })
-            .then(response => {
-                history.push('/');
-                console.log('response', response)
-                clearRedux();
-            })
-            .catch(error => {
-                console.log('error in post', error);
-            })
     }
 
     const clearRedux = () => {
