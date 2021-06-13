@@ -2,22 +2,30 @@ import axios from "axios";
 import {useState} from "react"
 
 // ⬇ Icons I need for the flag and delete button
+import TableCell from "@material-ui/core/TableCell";
 import FlagIcon from '@material-ui/icons/Flag';
 import FlagOutlineIcon from '@material-ui/icons/FlagOutlined';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-// ⬇ Things I need for styling
-import Button from '@material-ui/core/Button';
-
-import TableCell from "@material-ui/core/TableCell";
-
-
 function AdminItem({feedback, getFeedback}) {
 
     const [flagged, setFlagged] = useState(feedback.flagged);
     const handleFlag = (event) => {
-        setFlagged(!flagged)  
+        // ⬇ Setting the flagged variable to the opposite
+        setFlagged(!flagged) 
+        // ⬇ Declaring the variable as the opposite of what it is currently
+        let data = {
+            flagged: !flagged
+        };
+        // ⬇ Axios put request
+        axios.put(`/feedback/{feedback.id}`, data)
+        .then( response => {
+            console.log(response);
+            getFeedback()
+        }).catch( error => {
+            console.log(`Error in put`, error)
+        })
     }
 
     return(
