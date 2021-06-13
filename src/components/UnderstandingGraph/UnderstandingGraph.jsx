@@ -6,17 +6,11 @@ import axios from "axios";
 
 function UnderstandingGraph(props) {
     
-    const [feedback, setFeedback] = useState('');
-
-    // useEffect(() => {
-    //     getFeedback();
-    // }, [null])
-    
+    const [feedback, setFeedback] = useState('');    
     // ⬇ This gets my data from the database and sets it to feedback
     const getFeedback = () => {
         axios.get('/feedback') //OMFG IS IT BECAUSE OF DOUBLE QUOTES????
         .then( (response) => {
-            // console.log(response.data) // okay....this shows as the array of objects
             setFeedback(response.data)
             // my understanding, then is that I cannot console.log feedback here? Maybe because
             // I am still in the function?
@@ -30,42 +24,33 @@ function UnderstandingGraph(props) {
     console.log('feedback', feedback)
     
     // ⬇ Arrays of the data I will need:
-    // const date = []
-    // const understanding = []
     const dataArray = []
     // ⬇ Loops through feedback 
     for (let i=0; i < feedback.length; i++){
         // ⬇ Checking that I can get the dates that I want:
-        console.log(feedback[i])
-        console.log(feedback[i].date) // Will log the long long date
-        console.log(feedback[i].understanding) // Will log the number
-        // date.push(feedback[i].date);
-        // understanding.push(feedback[i].understanding);
-        // console.log(`date`, date)
-
+        // console.log(feedback[i])
+        // console.log(feedback[i].date) // Will log the long long date
+        // console.log(feedback[i].understanding) // Will log the number
+    
+        // ⬇ This pairs down my date data?
         let date = new Date('feedback[i].date');
         let formatOptions = {
             month: '2-digit',
             day: '2-digit',
             year: 'numeric',
-            hour:   '2-digit', 
-       minute: '2-digit',
-       hour12: true 
+            hour: false,
+            minute: false,
+            hour12: false
         }
         let dateString = date.toLocaleDateString('en-US', formatOptions);
         console.log(dateString)
+
         let data = {
             "date": feedback[i].date,
             "understanding": feedback[i].understanding
         }
         dataArray.push(data)
     }
-
-   
-
-
-
-
 
     // ⬇ Creating the chart
     const chart = useRef(null);
@@ -79,40 +64,6 @@ function UnderstandingGraph(props) {
     // ⬇ Adding data
 
     let data = dataArray;
-    // let data = [{
-    //     "date": "05/21/2021",
-    //     "understanding": 5
-    // }, {
-    //     "date": "05/24/2021",
-    //     "understanding": 5
-    // }, {
-    //     "date": "05/25/2021",
-    //     "understanding": 3
-    // }, {
-    //     "date": "05/26/2021",
-    //     "understanding": 2
-    // }, {
-    //     "date": "05/27/2021",
-    //     "understanding": 3
-    // }, {
-    //     "date": "05/28/2021",
-    //     "understanding": 4
-    // }, {
-    //     "date": "05/31/2021",
-    //     "understanding": 5
-    // }, {
-    //     "date": "06/01/2021",
-    //     "understanding": 2
-    // }, {
-    //     "date": "06/02/2021",
-    //     "understanding": 3
-    // }, {
-    //     "date": "06/03/2021",
-    //     "understanding": 1
-    // }, {
-    //     "date": "06/04/2021",
-    //     "understanding": 2
-    // }];
 
     x.data = data;
 
