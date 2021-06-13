@@ -14,9 +14,11 @@ function UnderstandingGraph(props) {
     
     // ⬇ This gets my data from the database and sets it to feedback
     const getFeedback = () => {
-        axios.get("/feedback")
+        axios.get('/feedback') //OMFG IS IT BECAUSE OF DOUBLE QUOTES????
         .then( (response) => {
+            console.log(response.data) // okay....this shows as the array of objects
             setFeedback(response.data)
+
         })
         .catch((error) => {
             console.log(`We have a server error`, error);
