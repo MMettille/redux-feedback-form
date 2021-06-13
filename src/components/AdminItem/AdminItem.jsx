@@ -1,6 +1,6 @@
 import axios from "axios";
 import {useState} from "react"
-
+import swal from 'sweetalert';
 // ⬇ Icons I need for the flag and delete button
 import TableCell from "@material-ui/core/TableCell";
 import FlagIcon from '@material-ui/icons/Flag';
@@ -30,23 +30,41 @@ function AdminItem({feedback, getFeedback}) {
     }
 
     const handleDelete=() => {
-        console.log('clicked deleted')
-    }
+        console.log('clicked delete')
+        console.log(feedback)
+        // ⬇ 
+                axios.delete(`/feedback/delete/${feedback.id}`)
+            .then( response => {
+                // Confirms to the user that it was deleted
+                swal(
+                    'Deleted!',
+                    'Your item has been deleted.',
+                    'success'
+                )
+                // ⬇ Will refresh the DOM with the updated database containing the new information
+                getFeedback();
+                }).catch( err => {
+                    alert(`There was a problem deleting. Please try again later.`)
+                });
+} // end deleteTask
+
     return(
         <>
         <TableCell>
-            {!flagged ? (
-            <FlagOutlineIcon onClick={() => handleFlag(feedback)} />
-            ) : (
-            <FlagIcon onClick={() => handleFlag(feedback)} />
-            )}
+            <IconButton aria-label="flag" onClick={() => handleFlag(feedback)}>
+                {!flagged ? (
+                <FlagOutlineIcon />
+                ) : (
+                <FlagIcon />
+                )}
+            </IconButton>
         </TableCell>
         <TableCell>{feedback.feeling}</TableCell>
         <TableCell>{feedback.understanding}</TableCell>
         <TableCell>{feedback.support}</TableCell>
         <TableCell>{feedback.comments}</TableCell>
         <TableCell>
-            <IconButton aria-label="delete">
+            <IconButton aria-label="delete"onClick={() => handleDelete(feedback)}>
                     <DeleteIcon />
             </IconButton>
         </TableCell>

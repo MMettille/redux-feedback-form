@@ -56,7 +56,7 @@ router.post('/',  (req, res) => {
   })
 
   //* DELETE METHOD
-  router.delete('/:id', (req, res) => {
+  router.delete('/delete/:id', (req, res) => {
     // ⬇ This will grab the id of the task that we would like to delete
     const feedbackToDelete = req.params.id;
     // ⬇ This tell the database what we'd like to delete and where
