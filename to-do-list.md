@@ -88,7 +88,7 @@
 [ /SubmitFeedback ]
     [ x ] Will display each feedback response (in a table?)
     [ x ] Submit Button
-        [  ] Show confirmation
+        [ x ] Show confirmation
         [ x ] Post to database
             [ x ] What to name data:
                 [ x ] ("feeling", "understanding", "support", "comments")
