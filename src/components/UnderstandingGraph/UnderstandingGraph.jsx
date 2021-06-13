@@ -16,29 +16,38 @@ function UnderstandingGraph(props) {
     const getFeedback = () => {
         axios.get('/feedback') //OMFG IS IT BECAUSE OF DOUBLE QUOTES????
         .then( (response) => {
-            console.log(response.data) // okay....this shows as the array of objects
+            // console.log(response.data) // okay....this shows as the array of objects
             setFeedback(response.data)
-
+            // my understanding, then is that I cannot console.log feedback here? Maybe because
+            // I am still in the function?
+            //TODO ASK DANE!!!
         })
         .catch((error) => {
             console.log(`We have a server error`, error);
         });
     }
 
+    console.log('feedback', feedback)
+    
     // ⬇ Arrays of the data I will need:
     const date = []
     const understanding = []
-
+    const dataArray = []
     // ⬇ Loops through feedback 
     for (let i=0; i < feedback.length; i++){
         // ⬇ Checking that I can get the dates that I want:
-        console.log(feedback.date)
-        //! That curseid infinite loop! I can't see what I am doing!
+        console.log(feedback[i])
+        console.log(feedback[i].date) // Will log the long long date
+        console.log(feedback[i].understanding) // Will log the number
         date.push(feedback[i].date);
         understanding.push(feedback[i].understanding);
         // console.log(`date`, date)
+        let data = {
+            "date": feedback[i].date,
+            "understanding": feedback[i].understanding
+        }
+        console.log(data)
     }
-
 
 
 
