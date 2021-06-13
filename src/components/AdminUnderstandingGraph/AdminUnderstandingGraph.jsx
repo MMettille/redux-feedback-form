@@ -3,22 +3,6 @@ import * as am4charts from "@amcharts/amcharts4/charts";
 
 function AdminUnderstandingGraph() {
     
-    const [feedback, setFeedback] = useState([]);
-    
-    useEffect(() => {
-        getFeedback();
-    })
-        
-    const getFeedback = () => {
-        axios.get("/feedback")
-        .then( (response) => {
-            setFeedback(response.data)
-        })
-        .catch((error) => {
-            console.log(`We have a server error`, error);
-        });
-    }
-
     // ⬇ Creating the chart
     const chart = am4core.create("chartdiv", am4charts.XYChart);
 
@@ -59,14 +43,28 @@ function AdminUnderstandingGraph() {
     }]
 
     // ⬇ creating xAxes (the horizontal axis)
-
+    const dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+    dateAxis.title.text = "Date";
     // ⬇ creating yAxes (the vertical axis)
+    const categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+    categoryAxis.dataFields.category = "understanding"
+    categoryAxis.title.text = "Understanding";
+    // ⬇ Creating the series for a line graph
+    const series = chart.series.push(new am4charts.LineSeries());
+    series.stroke = am4core.color("#ff0000");
+    series.strokeWidth = 3;
+    // ⬇ Binding the data to the series
+    series.dataFields.valueY = "understanding";
+    series.dataFields.dateX = "date"
 
+    // ⬇ Something here?
+    series.tensionX = 0.8;
+    series.bullets.push(new am4charts.CircleBullet());
 
 
     return(
         <>
-        
+        {chart}
         </>
     )
 }

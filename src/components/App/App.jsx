@@ -81,7 +81,7 @@ function App() {
             </Grid>
             <Grid item xs={12}>
               <Route path='/admin/understanding-graph'>
-                <Admin />
+                <AdminUnderstandingGraph />
               </Route>
             </Grid>
           <Grid item xs={12}>
