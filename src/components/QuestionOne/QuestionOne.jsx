@@ -15,14 +15,21 @@ function QuestionOne(props){
     const [value, setValue] = useState(0);
 
     const handleChange = (event) => {
+        /* ⬇ Material-ui's rating is a lab feature and is not yet hooked up to a form. In order to require the
+        user to input a rating before continuing, I prevented the page from reloading then made an if/else
+        statement. If the rating is 0, nothing happens. If it a number between 1-5, the value is dispatched to
+        redux and the user is pusghed to the next page.
+        */
+        event.preventDefault();
         if (value === 0){
-            window.location.reload()
+            return
         } else {
-            event.preventDefault();
             dispatch({type: 'ADD_FEELING', payload: 
                 value
             })
+            // ⬇ Resets the value to 0
             setValue(0)
+            // ⬇ Will send user to a new page
             history.push('/questions/QuestionTwo')
         }
     };

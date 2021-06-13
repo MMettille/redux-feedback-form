@@ -18,9 +18,9 @@ function SubmitFeedback(){
     const history = useHistory();
     const dispatch = useDispatch();
 
-    // reducers
+    // ⬇ Access the reducer below
     const userRating = useSelector(store => store.userRating);
-
+    // ⬇ On the click a popup appears, asking the user to confirm.
     const handleClick = (event) => {
         event.preventDefault()
         swal({
@@ -29,6 +29,7 @@ function SubmitFeedback(){
             icon: "warning",
             dangerMode: true,
             buttons: ["Cancel", "Yes, I am sure."]
+        // ⬇ Sends the data via a post request
         }).then ( (willSubmit)  => {
             if( willSubmit ) {
                 axios({
@@ -42,13 +43,14 @@ function SubmitFeedback(){
                     }
                 })
                     .then(response => {
+                        // ⬇ Pushes user back to homepage
                         history.push('/');
-                        console.log('response', response)
+                        // ⬇ Clears redux
                         clearRedux();
-                    })
+                    }) // ⬇ Logs an error if it happens
                     .catch(error => {
                         console.log('error in post', error);
-                    })
+                    }) // ⬇ Confirmation if everything is successful
                     swal("Your response has been submitted!",{
                         icon: "success",
                     })
@@ -57,7 +59,8 @@ function SubmitFeedback(){
             }
         })
     }
-
+    
+    // ⬇ Clears redux
     const clearRedux = () => {
         dispatch({
             type: 'CLEAR_REDUX'

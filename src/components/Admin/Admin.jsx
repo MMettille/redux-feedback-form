@@ -2,6 +2,7 @@ import axios from "axios";
 import {useState, useEffect} from "react"
 import {useHistory} from 'react-router-dom';
 
+// ⬇ Things I need for styling
 import './Admin.css'
 import Button from '@material-ui/core/Button';
 import Table from "@material-ui/core/Table";
@@ -17,20 +18,25 @@ function Admin(){
     const history = useHistory();
     const [feedback, setFeedback] = useState([]);
 
+    // ⬇ On page load, run the function getFeedback
     useEffect(() => {
         getFeedback();
     }, [null]);
-        
+    
+    // ⬇ Function to get data from the database
     const getFeedback = () => {
         axios.get("/feedback")
         .then( response => {
+            // ⬇ This will set the data from the database to feedback so we can access it here.
             setFeedback(response.data)
         })
+        // ⬇ If there is an error, log it!
         .catch( error => {
             console.log(`We have a server error`, error);
         });
     }
 
+    // ⬇ Will send user to a new page, called understanding-graph
     const handleChange = (event) => {
         history.push('/understanding-graph')
     }
