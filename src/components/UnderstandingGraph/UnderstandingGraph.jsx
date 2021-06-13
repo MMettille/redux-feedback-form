@@ -8,9 +8,9 @@ function UnderstandingGraph(props) {
     
     const [feedback, setFeedback] = useState('');
 
-    useEffect(() => {
-        getFeedback();
-    }, [null])
+    // useEffect(() => {
+    //     getFeedback();
+    // }, [null])
     
     // ⬇ This gets my data from the database and sets it to feedback
     const getFeedback = () => {
@@ -46,8 +46,10 @@ function UnderstandingGraph(props) {
             "date": feedback[i].date,
             "understanding": feedback[i].understanding
         }
-        console.log(data)
+        dataArray.push(data)
     }
+
+    console.log('Data Array: ', dataArray)
 
 
 
@@ -57,45 +59,48 @@ function UnderstandingGraph(props) {
     const chart = useRef(null);
 
     useLayoutEffect(() => {
+        getFeedback()
     let x = am4core.create("chartdiv", am4charts.XYChart);
     // ⬇ Padding to the right of the graph
     x.paddingRight =  20;
 
     // ⬇ Adding data
-    let data = [{
-        "date": "05/21/2021",
-        "understanding": 5
-    }, {
-        "date": "05/24/2021",
-        "understanding": 5
-    }, {
-        "date": "05/25/2021",
-        "understanding": 3
-    }, {
-        "date": "05/26/2021",
-        "understanding": 2
-    }, {
-        "date": "05/27/2021",
-        "understanding": 3
-    }, {
-        "date": "05/28/2021",
-        "understanding": 4
-    }, {
-        "date": "05/31/2021",
-        "understanding": 5
-    }, {
-        "date": "06/01/2021",
-        "understanding": 2
-    }, {
-        "date": "06/02/2021",
-        "understanding": 3
-    }, {
-        "date": "06/03/2021",
-        "understanding": 1
-    }, {
-        "date": "06/04/2021",
-        "understanding": 2
-    }];
+
+    let data = dataArray;
+    // let data = [{
+    //     "date": "05/21/2021",
+    //     "understanding": 5
+    // }, {
+    //     "date": "05/24/2021",
+    //     "understanding": 5
+    // }, {
+    //     "date": "05/25/2021",
+    //     "understanding": 3
+    // }, {
+    //     "date": "05/26/2021",
+    //     "understanding": 2
+    // }, {
+    //     "date": "05/27/2021",
+    //     "understanding": 3
+    // }, {
+    //     "date": "05/28/2021",
+    //     "understanding": 4
+    // }, {
+    //     "date": "05/31/2021",
+    //     "understanding": 5
+    // }, {
+    //     "date": "06/01/2021",
+    //     "understanding": 2
+    // }, {
+    //     "date": "06/02/2021",
+    //     "understanding": 3
+    // }, {
+    //     "date": "06/03/2021",
+    //     "understanding": 1
+    // }, {
+    //     "date": "06/04/2021",
+    //     "understanding": 2
+    // }];
 
     x.data = data;
 
