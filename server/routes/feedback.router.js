@@ -5,7 +5,7 @@ const pool = require('../modules/pool');
 //* GET REQUEST
 // Will get all the responses
 router.get('/', (req, res) => {
-  pool.query('SELECT * from "feedback";').then((result) => {
+  pool.query('SELECT * from "feedback" ORDER BY "date" ASC;').then((result) => {
     // ⬇ Sends back the results in an object
       res.send(result.rows);
   }).catch( error => {
