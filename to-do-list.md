@@ -100,8 +100,9 @@
 [ Admin Page ]
     [ x ] Get request from the database
     [ x ] Display everything in a table
-    [ ] WILL have a delete function
-    [ ] Flag function
+[ Admin Item ]
+    [ ] Put request to the server. Update the database on if feedback has been flagged or not
+    [ ] Delete 
 [ Graph ]
     [ x ] To get data from the database and into an array of objects:
         [ x ] will need an empty array for both the date and understanding score

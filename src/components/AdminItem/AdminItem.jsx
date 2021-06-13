@@ -14,11 +14,11 @@ import TableCell from "@material-ui/core/TableCell";
 
 
 function AdminItem({feedback, getFeedback}) {
-   const [flagged, setFlagged] = useState(feedback.flagged);
-const handleFlag = (event) => {
-    console.log('clicked');
-    setFlagged(!flagged)  
-}
+
+    const [flagged, setFlagged] = useState(feedback.flagged);
+    const handleFlag = (event) => {
+        setFlagged(!flagged)  
+    }
 
     return(
         <>
@@ -29,7 +29,7 @@ const handleFlag = (event) => {
             <FlagIcon onClick={handleFlag} />
             )}
         </TableCell>
-        <TableCell>feedback.feeling}</TableCell>
+        <TableCell>{feedback.feeling}</TableCell>
         <TableCell>{feedback.understanding}</TableCell>
         <TableCell>{feedback.support}</TableCell>
         <TableCell>{feedback.comments}</TableCell>
