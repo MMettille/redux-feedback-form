@@ -37,14 +37,14 @@ router.post('/',  (req, res) => {
   
   //* PUT REQUEST
   // ⬇ Edits flagged status in the database
-  router.put('/:id', (req, res) => {
+  router.put("/flagged/:id", (req, res) => {
     // ⬇ Checking the status of flagged
-    console.log(req.params.id)
+    console.log('req.params.id', req.params.id)
     // ⬇ Making the user's flag into a variable
     const flagged = req.body.flagged
     // ⬇ Checking the status of flagged
-    console.log(req.body.flagged)
-    let queryText = 'UPDATE "feedback" SET "FLAGGED"=$1 WHERE "id"=$2;'
+    console.log('req.body.flagged', req.body.flagged)
+    let queryText = 'UPDATE "feedback" SET "flagged"=$1 WHERE "id"=$2;'
     // ⬇ Sanitizing Data
     pool.query(queryText, [flagged, req.params.id])
     .then( result => {
