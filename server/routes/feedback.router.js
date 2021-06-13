@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   pool.query(queryText).then( result => {
     // ⬇ Sends back the results in an object
       res.send(result.rows);
-      console.log(result.rows)
+      console.log('Result from server:', result.rows)
   }).catch( error => {
       console.log('Error GET', error);
       res.sendStatus(500);

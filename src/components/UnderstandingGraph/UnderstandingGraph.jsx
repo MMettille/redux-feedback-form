@@ -10,7 +10,7 @@ function UnderstandingGraph(props) {
 
     useEffect(() => {
         getFeedback();
-    })
+    }, [null])
     
     // ⬇ This gets my data from the database and sets it to feedback
     const getFeedback = () => {
@@ -30,7 +30,7 @@ function UnderstandingGraph(props) {
     // ⬇ Loops through feedback 
     for (let i=0; i < feedback.length; i++){
         // ⬇ Checking that I can get the dates that I want:
-        // console.log(feedback.date)
+        console.log(feedback.date)
         //! That curseid infinite loop! I can't see what I am doing!
         date.push(feedback[i].date);
         understanding.push(feedback[i].understanding);

@@ -23,14 +23,14 @@ function Admin(){
 
     useEffect(() => {
         getFeedback();
-    })
+    }, [null]);
         
     const getFeedback = () => {
         axios.get("/feedback")
-        .then( (response) => {
+        .then( response => {
             setFeedback(response.data)
         })
-        .catch((error) => {
+        .catch( error => {
             console.log(`We have a server error`, error);
         });
     }
