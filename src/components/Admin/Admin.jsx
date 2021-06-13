@@ -1,8 +1,9 @@
 import axios from "axios";
 import {useState, useEffect} from "react"
+import {useHistory} from 'react-router-dom';
 
 import './Admin.css'
-
+import Button from '@material-ui/core/Button';
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -13,6 +14,7 @@ import Paper from "@material-ui/core/Paper";
 
 function Admin(){
 
+    const history = useHistory();
     const [feedback, setFeedback] = useState([]);
 
     useEffect(() => {
@@ -29,8 +31,13 @@ function Admin(){
         });
     }
 
+    const handleChange = (event) => {
+        history.push('/understanding-graph')
+    }
+
     return(
-        <div className="table-container">
+        <>
+        <div className="admin-table-container">
             <TableContainer component={Paper}>
                 <Table aria-label="simple table">
                     <TableHead>
@@ -54,6 +61,13 @@ function Admin(){
                 </Table>
             </TableContainer>
         </div>
+        <div>
+            <h3>NEW FEATURE COMING SOON!</h3>
+            <p>Now in beta testing! Soon you will be able to visually see patterns in your student's feedback.</p>
+            <p>Interested in seeing the test product, while our engineers are hunting down bugs? Click the button below!</p>
+            <Button variant="outlined" size="large" color="primary" onClick={handleChange}>Submit</Button>
+        </div>
+        </>
     )
 }
 
