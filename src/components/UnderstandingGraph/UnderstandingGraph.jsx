@@ -52,7 +52,7 @@ function UnderstandingGraph(props) {
     }, []);
 
     // ⬇ This gets my data from the database and sets it to feedback
-    function getFeedback () {
+    const getFeedback = ()  => {
         axios.get('/feedback') 
         .then( (response) => {
             setFeedback(response.data)
