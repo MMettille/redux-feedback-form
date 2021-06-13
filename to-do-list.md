@@ -102,11 +102,10 @@
     [ x ] Display everything in a table
     [ ] WILL have a delete function
 [ Graph ]
-    [ ] To get data from the database and into an array of objects:
-        [ ] will need an empty array for both the date and understanding score
-        [ ] Will need to loop through the database and push the into into the empty arrays
-        [ ] Will need to create an object for each item in the database and set it to the empty arrays
-        [ ] Need a function to scrub the data from 2021-05-21T05:00:00.000Z to 05-21-2021
+    [ x ] To get data from the database and into an array of objects:
+        [ x ] will need an empty array for both the date and understanding score
+        [ x ] Will need to loop through the database and push the into into the empty arrays
+        [ x ] Will need to create an object for each item in the database and set it to the empty arrays
 
 
 
