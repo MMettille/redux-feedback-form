@@ -12,6 +12,11 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+// ⬇ Icons I need for the flag and delete button
+import FlagIcon from '@material-ui/icons/Flag';
+import FlagOutlineIcon from '@material-ui/icons/FlagOutlined';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 function Admin(){
 
@@ -41,26 +46,49 @@ function Admin(){
         history.push('/understanding-graph')
     }
 
+    const [flagged, setFlagged] = useState(false);
+    const handleFlag = (event) => {
+        console.log('clicked');
+        setFlagged(!flagged)
+        
+    }
     return(
         <>
         <div className="admin-table-container">
             <TableContainer component={Paper}>
                 <Table aria-label="simple table">
                     <TableHead>
-                    <TableRow>
-                        <TableCell>Feeling</TableCell>
-                        <TableCell>Understanding</TableCell>
-                        <TableCell>Support</TableCell>
-                        <TableCell>Comments</TableCell>
-                    </TableRow>
+                        <TableRow>
+                            <TableCell>Flag?</TableCell>
+                            <TableCell>Feeling</TableCell>
+                            <TableCell>Understanding</TableCell>
+                            <TableCell>Support</TableCell>
+                            <TableCell>Comments</TableCell>
+                            <TableCell>Delete?</TableCell>
+                        </TableRow>
                     </TableHead>
                     <TableBody>
                         {feedback.map((item, i) => (
                         <TableRow key={i}>
-                        <TableCell>{item.feeling}</TableCell>
-                        <TableCell>{item.understanding}</TableCell>
-                        <TableCell>{item.support}</TableCell>
-                        <TableCell>{item.comments}</TableCell>
+                            <TableCell >
+                                {!flagged ? (
+                                    <FlagOutlineIcon onClick={handleFlag} />
+                                ) : (
+                                    <FlagIcon onClick={handleFlag} />
+                                )}
+                                <IconButton aria-label="flag">
+                                    <FlagIcon onClick={handleFlag}/>
+                                </IconButton>
+                            </TableCell>
+                            <TableCell>{item.feeling}</TableCell>
+                            <TableCell>{item.understanding}</TableCell>
+                            <TableCell>{item.support}</TableCell>
+                            <TableCell>{item.comments}</TableCell>
+                            <TableCell>
+                                <IconButton aria-label="delete">
+                                    <DeleteIcon />
+                                </IconButton>
+                            </TableCell>
                         </TableRow>
                     ))}
                     </TableBody>
