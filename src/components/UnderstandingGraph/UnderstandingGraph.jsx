@@ -1,11 +1,26 @@
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 
-import React, { useRef, useLayoutEffect } from 'react';
+import React, { useRef, useLayoutEffect, useState, useEffect } from 'react';
+import axios from "axios";
 
 function UnderstandingGraph(props) {
     
-    
+    const [feedback, setFeedback] = useState([]);
+
+    useEffect(() => {
+        getFeedback();
+    })
+        
+    const getFeedback = () => {
+        axios.get("/feedback")
+        .then( (response) => {
+            setFeedback(response.data)
+        })
+        .catch((error) => {
+            console.log(`We have a server error`, error);
+        });
+    }
 
 
 
