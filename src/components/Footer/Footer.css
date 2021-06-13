@@ -2,7 +2,21 @@
     background-color: #5d99c6;
     min-height: 30px;
     padding: 20px;
+    margin-top: 20px;
     width: 100%;
-    position: absolute;
+    position: relative;
     bottom:0;
 }
+
+/* The width is 100%, when the viewport is 110px or smaller - for smartphone users */
+@media screen and (max-width: 700px) {
+    .App-footer {
+        background-color: #5d99c6;
+        min-height: 30px;
+        padding: 20px;
+        margin-top: 20px;
+        width: 100%;
+        position: fixed;
+        bottom:0;
+    }
+  }
