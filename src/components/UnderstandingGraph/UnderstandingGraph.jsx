@@ -13,7 +13,7 @@ function UnderstandingGraph(props) {
 
     useEffect(() => {
         // ⬇ This calls my get request from the server
-        getFeedback()
+        getFeedback();
         // ⬇ This creates the kind of chart that I would like from am4charts
         let x = am4core.create("chartdiv", am4charts.XYChart);
         // ⬇ Padding to the right of the graph
@@ -46,14 +46,13 @@ function UnderstandingGraph(props) {
 
         chart.current = x;
         
-
         return () => {
             x.dispose();
         };
     }, []);
 
     // ⬇ This gets my data from the database and sets it to feedback
-    const getFeedback = () => {
+    function getFeedback () {
         axios.get('/feedback') 
         .then( (response) => {
             setFeedback(response.data)
