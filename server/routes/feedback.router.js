@@ -54,4 +54,22 @@ router.post('/',  (req, res) => {
       res.sendStatus(500);
     });
   })
+
+  //* DELETE METHOD
+  router.delete('/:id', (req, res) => {
+    // ⬇ This will grab the id of the task that we would like to delete
+    const feedbackToDelete = req.params.id;
+    // ⬇ This tell the database what we'd like to delete and where
+    const queryText = `DELETE FROM "feedback" WHERE "id"= $1;`;
+    // ⬇ Delete sanitized user input from the database
+    pool.query(queryText, [feedbackToDelete])
+    // ⬇ Sending back a 'ok' code to the user
+    .then( response => {
+        console.log(`You deleted...`, feedbackToDelete);
+        res.sendStatus(200);
+    }).catch( err => {
+        console.log(`error deleting on server side`);
+        res.sendStatus(500);
+    });
+  })
   module.exports = router;

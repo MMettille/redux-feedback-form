@@ -11,7 +11,9 @@ import DeleteIcon from '@material-ui/icons/Delete';
 function AdminItem({feedback, getFeedback}) {
 
     const [flagged, setFlagged] = useState(feedback.flagged);
+    
     const handleFlag = (feedback) => {
+        console.log(feedback)
         // ⬇ Setting the flagged variable to the opposite
         setFlagged(!flagged) 
         // ⬇ Declaring the variable as the opposite of what it is currently
@@ -27,13 +29,16 @@ function AdminItem({feedback, getFeedback}) {
         })
     }
 
+    const handleDelete=() => {
+        console.log('clicked deleted')
+    }
     return(
         <>
         <TableCell>
             {!flagged ? (
             <FlagOutlineIcon onClick={() => handleFlag(feedback)} />
             ) : (
-            <FlagIcon onClick={handleFlag} />
+            <FlagIcon onClick={() => handleFlag(feedback)} />
             )}
         </TableCell>
         <TableCell>{feedback.feeling}</TableCell>

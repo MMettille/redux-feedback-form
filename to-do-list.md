@@ -101,7 +101,7 @@
     [ x ] Get request from the database
     [ x ] Display everything in a table
 [ Admin Item ]
-    [ ] Put request to the server. Update the database on if feedback has been flagged or not
+    [ x ] Put request to the server. Update the database on if feedback has been flagged or not
     [ ] Delete 
 [ Graph ]
     [ x ] To get data from the database and into an array of objects:
