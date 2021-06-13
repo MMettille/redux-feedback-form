@@ -3,7 +3,7 @@ import './Home.css';
 import { useHistory } from 'react-router-dom';
 
 function Home(){
-
+    // ⬇ Will send user to a new page
     const history = useHistory();
     const nextPage = (event) => {
         history.push('/questions/QuestionOne');

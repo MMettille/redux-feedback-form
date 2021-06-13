@@ -3,9 +3,11 @@ import '@fontsource/roboto';
 import {Route, HashRouter as Router} from 'react-router-dom';
 import './App.css';
 
+// ⬇ Things we need for styling
 import { createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
+// ⬇ Importing functions from components
 import Admin from '../Admin/Admin';
 import UnderstandingGraph from '../UnderstandingGraph/UnderstandingGraph'
 import Header from '../Header/Header';
@@ -17,6 +19,7 @@ import QuestionFour from '../QuestionFour/QuestionFour';
 import SubmitFeedback from '../SubmitFeedback/SubmitFeedback';
 import Footer from '../Footer/Footer';
 
+// ⬇ Color theme for this project
 const theme = createMuiTheme({
   palette: {
     primary: {

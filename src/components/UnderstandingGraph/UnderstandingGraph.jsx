@@ -15,7 +15,6 @@ function UnderstandingGraph(props) {
         x.paddingRight =  20;
         // ⬇ This declares what kind of date format I would like.
         x.dateFormatter.dateFormat = "yyyy-MM-dd";
-        // ⬇ Adding from the data that I set in the getFeedback function
         // ⬇ Adding data
         let data = [{
             "date": "05/21/2021",
@@ -55,12 +54,15 @@ function UnderstandingGraph(props) {
         x.data = data;
         // ⬇ creating xAxes (the horizontal axis)
         let dateAxis = x.xAxes.push(new am4charts.DateAxis());
-        // dateAxis.title.text = "Date";
         dateAxis.renderer.grid.template.location = 0;
-        // ⬇ creating yAxes (the vertical axis)
+        // ⬇ Creating the title on the dateAxes
+        dateAxis.title.text = "Date";
+        // ⬇ Creating yAxes (the vertical axis)
         let valueAxis = x.yAxes.push(new am4charts.ValueAxis());
         valueAxis.tooltip.disabled = true;
         valueAxis.renderer.minWidth = 35;
+        // ⬇ Creating the title on the yAxes
+        valueAxis.title.text = "Understanding"
         // ⬇ Creating the series for a line graph
         let series = x.series.push(new am4charts.LineSeries());
         // ⬇ Binding the data to the series
@@ -72,16 +74,19 @@ function UnderstandingGraph(props) {
         let scrollbarX = new am4charts.XYChartScrollbar();
         scrollbarX.series.push(series);
         x.scrollbarX = scrollbarX;
-
+        // ⬇ Sets the chart to x
         chart.current = x;
-        
+        // ⬇ Disposes the chart to the DOM
         return () => {
             x.dispose();
         };
     }, []);
 
     return(
-        <div id="chartdiv" style={{ width: "100%", height: "500px" }}></div>
+        <>
+            <div id="chartdiv" style={{ width: "100%", height: "500px" }}></div>
+            <h3>It looks like there was a drop in understanding on June 1st...it must have been REACT week!</h3>
+        </>
     );
 };
 
