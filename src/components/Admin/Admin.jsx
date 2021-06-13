@@ -1,7 +1,7 @@
 import axios from "axios";
 import {useState, useEffect} from "react"
 import {useHistory} from 'react-router-dom';
-
+import AdminItem from '../AdminItem/AdminItem';
 // ⬇ Things I need for styling
 import './Admin.css'
 import Button from '@material-ui/core/Button';
@@ -12,11 +12,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-// ⬇ Icons I need for the flag and delete button
-import FlagIcon from '@material-ui/icons/Flag';
-import FlagOutlineIcon from '@material-ui/icons/FlagOutlined';
-import IconButton from '@material-ui/core/IconButton';
-import DeleteIcon from '@material-ui/icons/Delete';
+
 
 function Admin(){
 
@@ -46,12 +42,6 @@ function Admin(){
         history.push('/understanding-graph')
     }
 
-    const [flagged, setFlagged] = useState(false);
-    const handleFlag = (event) => {
-        console.log('clicked');
-        setFlagged(!flagged)
-        
-    }
     return(
         <>
         <div className="admin-table-container">
@@ -68,29 +58,15 @@ function Admin(){
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {feedback.map((item, i) => (
-                        <TableRow key={i}>
-                            <TableCell >
-                                {!flagged ? (
-                                    <FlagOutlineIcon onClick={handleFlag} />
-                                ) : (
-                                    <FlagIcon onClick={handleFlag} />
-                                )}
-                                <IconButton aria-label="flag">
-                                    <FlagIcon onClick={handleFlag}/>
-                                </IconButton>
-                            </TableCell>
-                            <TableCell>{item.feeling}</TableCell>
-                            <TableCell>{item.understanding}</TableCell>
-                            <TableCell>{item.support}</TableCell>
-                            <TableCell>{item.comments}</TableCell>
-                            <TableCell>
-                                <IconButton aria-label="delete">
-                                    <DeleteIcon />
-                                </IconButton>
-                            </TableCell>
-                        </TableRow>
-                    ))}
+                        {feedback.map((feedback, i) => (
+                            <TableRow key={i}>
+                                <AdminItem
+                                    value={i}
+                                    feedback={feedback}
+                                    getFeedback={getFeedback}
+                                />
+                            </TableRow>
+                        ))}
                     </TableBody>
                 </Table>
             </TableContainer>
