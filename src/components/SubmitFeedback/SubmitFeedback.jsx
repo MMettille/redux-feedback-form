@@ -51,7 +51,7 @@ function SubmitFeedback(){
                     .catch(error => {
                         console.log('error in post', error);
                     }) // ⬇ Confirmation if everything is successful
-                    swal("Your response has been submitted!",{
+                    swal("Thank you for submitting your response! You will now be taken back to the home screen.",{
                         icon: "success",
                     })
             } else {
