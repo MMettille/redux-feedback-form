@@ -11,7 +11,7 @@ A feedback form built for Prime Digital Academy to assess how their students are
 
 ## Installation
 
-- Create a database named to-do-list,
+- Create a database named prime_feedback,
 - The queries in the database.sql file are set up to create all the necessary tables that you will need to have this app work correctly. The project is built on Postgres, so you will need to make sure to have that installed. I would recommend using Postico to run those queries as that was used to create the queries.
 - Open up your editor of choice and run an "npm install"
 - Run "npm run server" in your terminal.
