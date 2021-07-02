@@ -72,10 +72,9 @@ function Admin(){
             </TableContainer>
         </div>
         <div>
-            <h3>NEW FEATURE COMING SOON!</h3>
-            <p>Now in beta testing! Soon you will be able to visually see patterns in your student's feedback.</p>
-            <p>Interested in seeing the test product, while our engineers are hunting down bugs? Click the button below!</p>
-            <Button variant="outlined" size="large" color="primary" onClick={handleChange}>Submit</Button>
+            <h3>NEW FEATURE - JUST LAUNCHED!</h3>
+            <p>Now you are able to visually see patterns in your student's feedback.</p>
+            <Button variant="outlined" size="large" color="primary" onClick={handleChange}>Feedback Graph</Button>
         </div>
         </>
     )

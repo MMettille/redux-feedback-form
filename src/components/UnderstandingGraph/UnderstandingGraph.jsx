@@ -29,9 +29,10 @@ function UnderstandingGraph(props) {
         x.dateFormatter.dateFormat = "yyyy-MM-dd";
 
         // ⬇ Adding from the data that I set in the getFeedback function
-        let data = getDataArray(feedbackData);
+        let data = feedbackData
         // ⬇ Making the data tied to the chart, called x.
         x.data = data;
+        console.log(data)
         // ⬇ creating xAxes (the horizontal axis)
         let dateAxis = x.xAxes.push(new am4charts.DateAxis());
         // dateAxis.title.text = "Date";
@@ -57,12 +58,6 @@ function UnderstandingGraph(props) {
       .catch((error) => {
         console.log(`We have a server error`, error);
       });
-
-  const getDataArray = (feedbackData) =>
-    feedbackData.map((feedback) => ({
-      date: feedback.date,
-      understanding: feedback.understanding
-    }));
 
   return <div id="chartdiv"></div>;
 }
