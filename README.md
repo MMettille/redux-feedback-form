@@ -6,6 +6,8 @@ _Duration: 2 Day Sprint_
 
 A feedback form built for Prime Digital Academy to assess how their students are processing their immersive education.
 
+To visit the deployed application, please visit: [DEPLOYED VERSION OF APP](https://mmettille-feedback-form.herokuapp.com/#/)
+
 ## Screen Shot
 ![Image of a graph](./understanding-graph.png)
 
