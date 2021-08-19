@@ -23,7 +23,7 @@ A feedback form was built for Prime Digital Academy to assess how their students
 
 ## Screenshots
 
-<img src="./understanding-graph.png" />"
+<img src="./understanding-graph.png" />
 
 ## Built With
 
